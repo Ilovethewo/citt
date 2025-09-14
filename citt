@@ -1,0 +1,29 @@
+#!/bin/zsh
+# citt - Calculator In The Terminal (zsh-friendly)
+
+echo "CITT VERSION 1.0"
+while true; do
+    echo -n "> "        # print prompt without newline
+    read eq             # read user input
+    case $eq in
+        exit)
+            echo "Goodbye!"
+            break
+            ;;
+        *)
+            # replace x or × with * for multiplication
+            sanitized=$(echo "$eq" | sed 's/x/*/g' | sed 's/×/*/g')
+            # handle square root: "9 —SQUARE-ROOT" or "9 sqrt"
+            if [[ $sanitized == *"—SQUARE-ROOT"* ]] || [[ $sanitized == 
+*"sqrt"* ]]; then
+                num=$(echo $sanitized | grep -o '[0-9]\+')
+                result=$(echo "scale=10; sqrt($num)" | bc -l)
+                echo "sum of professionaleq:$result"
+            else
+                # evaluate normal arithmetic
+                result=$(echo "$sanitized" | bc -l)
+                echo "sum of eq:$result"
+            fi
+            ;;
+    esac
+done
