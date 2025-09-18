@@ -17,7 +17,7 @@ citt
 Or, if you have too much experience with the terminal:
 
 ./citt
-
+  (THESE ARE OUTDATED. SCROLL TO THE BOTTOM FOR INSTRUCTIONS.)
 ⸻
 
 Commands / Equations Supported
@@ -27,6 +27,7 @@ CITT supports basic arithmetic in a REPL-style interface:
 	•	8x8 or 8*8 → multiplication
 	•	8-8 → subtraction
 	•	8/8 → division
+    •   sqr (or add flag -SQUARE-ROOT to ur number)
 	•	exit → close CITT
 
 (Replace 8 with your number of choice)
@@ -43,3 +44,36 @@ sum of eq:16
 sum of eq:64
 exit
 Goodbye!
+_____
+
+
+
+
+
+
+
+
+NEW WAY TO USE CITT/USE ONLINE (this may download it too of using bash or zsh):
+
+curl -L -O https://raw.githubusercontent.com/Ilovethewo/citt/main/citt
+
+
+
+there you go
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
